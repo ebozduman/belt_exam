@@ -1,0 +1,31 @@
+<title>Like Status</title>
+<a href="/show"><u>Bright Ideas</u></a>
+<div style="margin:10px 100px">
+    <div style="width:100px; display:inline-block">
+        <a href="/users/<%=@idea.user.id%>"><u><%=@idea.user.alias%></u></a>  says:
+    </div>
+    <div style="width: 350px; height:150px; padding-bottom:10px; display:inline-block; border:1px solid black; vertical-align:top">
+        <p><%=@idea.context%></p>
+    </div>
+    </br>
+</div>
+
+<div class="container">
+  <p>People who liked this post:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Alias</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+        <tbody>
+            <% @likers_list.each do |liker| %>
+              <tr>
+                <td><%= User.find(liker.user_id).alias %></td>
+                <td><%= User.find(liker.user_id).name %></td>
+              </tr>
+            <% end %>
+        </tbody>
+  </table>
+</div>

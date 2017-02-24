@@ -1,0 +1,68 @@
+<title>Login/Registration</title>
+<div style="margin:50px">
+    <h4 style="margin-bottom:20px">Welcome!</h4>
+    <div style="padding: 50px 10px;display:inline-block; width: 400px; height:500px; border:1px solid black">
+        <form action="/create" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Name:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" name="name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Alias:</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" name="alias">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-4 col-form-label">Email:</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="inputEmail3" name='email'>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-4 col-form-label">Password:</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="inputPassword3" name='password'>
+                </div>
+            </div>
+            <p>*Password should be at least 8 characters</p>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-4 col-form-label">Confirm PW:</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="inputPassword3" name='password_confirmation'>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-11" style="width:405px;padding-top:10px;text-align:right">
+                    <button type="submit" class="btn btn-default">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div style="display:inline-block; padding: 50px 10px;width: 400px; height:250px;border:1px solid black; vertical-align:top">
+        <form action="/login" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-3 col-form-label">Email:</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="inputEmail3" name="email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-3 col-form-label">Password:</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="inputPassword3" name="password">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-11" style="width:405px;padding-top:10px;text-align:right">
+                    <button type="submit" class="btn btn-default">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
